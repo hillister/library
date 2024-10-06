@@ -129,3 +129,35 @@ body {
 .cardRead {
     grid-column: span 2;
 }
+
+#myForm {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    border: solid;
+
+}
+
+legend {
+    grid-column: span 4 ;
+    border: solid;
+    grid-row-start: 1;
+}
+
+.close-btn {
+    grid-row-start: 1;
+    grid-column-start: 5;
+    grid-row: span 4;
+}
+
+#titleT {
+    grid-row-start: 2;
+}
+
+#title {
+    grid-row-start: 2;
+}
+
+#submit {
+    grid-column: span 5;
+}
