@@ -14,13 +14,7 @@ function Book(title, author, pages, read) {
 function preloadBook() {
     let sampleBook = new Book("The Great Gatsby", "F. Scott Fitzgerald", 180, false);
     myLibrary.push(sampleBook);
-    myLoop(); // Render the preloaded book
-    let sampleBook2 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 180, false);
-    myLibrary.push(sampleBook2);
-    myLoop(); // Render the preloaded book
-    let sampleBook3 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 180, false);
-    myLibrary.push(sampleBook3);
-    myLoop(); // Render the preloaded book
+    myLoop(); 
 }
 
 

@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family:'Times New Roman', Times, serif;
 }
 
 #popUp {
@@ -19,7 +20,8 @@
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 600px;
+    border-radius: 20px;
+    width: 700px;
     height: 300px;
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -41,6 +43,7 @@ body {
     background-color: rgb(30, 121, 94);
     display: flex;
     justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .header h2 {
@@ -59,7 +62,11 @@ body {
     justify-self: center;
     position: fixed;
     top: 90%;
+    cursor: pointer;
+}
 
+#btnPopUp:hover {
+    background-color: rgb(3, 26, 19);
 }
 
 #container {
@@ -86,6 +93,7 @@ body {
     height: 250px;
     padding-bottom: 20px;
     padding-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .delBtn {
@@ -99,6 +107,7 @@ body {
     font-size: 15px;
     grid-row-start: 5;
     grid-column-start: 2;
+    cursor: pointer;
 }
 
 .read {
@@ -112,6 +121,7 @@ body {
     font-size: 15px;
     grid-row-start: 5;
     grid-column-start: 1;
+    cursor: pointer;
 }
 
 .cardTitle {
@@ -134,20 +144,32 @@ body {
     display: grid;
     grid-template-columns: 2fr 2fr 2fr 2fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    border: solid;
-
+    font-size: 20px;
+    margin: 10px;
+    
 }
 
 legend {
     grid-column: span 4 ;
-    border: solid;
     grid-row-start: 1;
+    justify-self: center;
+    padding-left: 55px;
+    margin-bottom: 30px;
+    font-weight: 900;
+    color: rgb(30, 121, 94);;
 }
 
 .close-btn {
     grid-row-start: 1;
     grid-column-start: 5;
     grid-row: span 4;
+    align-self: baseline;
+    background-color: rgb(30, 121, 94);
+    border: none;
+    border-radius: 15px;
+    height: 20px;
+    color: white;
+    cursor: pointer;
 }
 
 #titleT {
@@ -160,4 +182,41 @@ legend {
 
 #submit {
     grid-column: span 5;
+    background-color: rgb(30, 121, 94);
+    color: white;
+    justify-self: center;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: rgb(3, 26, 19);
+}
+
+label {
+    justify-self: center;
+    align-self: center;
+}
+
+input {
+    justify-self: start;
+    align-self: center;
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+#readT {
+    margin-left: 60px;
+}
+
+#auth {
+    margin-left: 60px;
+}
+
+button:hover {
+    background-color: rgb(3, 26, 19);
 }
