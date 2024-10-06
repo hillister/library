@@ -60,6 +60,14 @@ function myLoop(){
         let bookRead =  document.createElement("p")
         bookRead.innerHTML = (book.read ? 'yes' : 'no')
 
+        let changeRead = document.createElement("button")
+        changeRead.innerHTML = "read"
+         
+        changeRead.addEventListener("click", function(){
+            book.read = true
+            bookRead.innerHTML = 'yes'
+        });
+
         let deleteBtn = document.createElement("button")
         deleteBtn.innerHTML = "delete"
         
@@ -71,12 +79,13 @@ function myLoop(){
         card.appendChild(bookAuthor);
         card.appendChild(bookPages);
         card.appendChild(bookRead);
+        card.appendChild(changeRead);
         card.appendChild(deleteBtn);
-        container.appendChild(card);
-
-        
+        container.appendChild(card);        
     }
 }
+
+
 
 function removeCard(index){
     myLibrary.splice(index, 1);
