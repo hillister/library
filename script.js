@@ -92,7 +92,7 @@ function myLoop(){
 
             changeRead.addEventListener("click", function(){
                 book.read = true
-                bookRead.innerHTML = 'Already read'
+                bookRead.innerHTML = 'Status: Already read'
                 changeRead.remove()
             });
         }
@@ -121,5 +121,6 @@ function togglePopUp() {
 }
 
 document.getElementById("btnPopUp").addEventListener("click", togglePopUp);
+document.getElementById("closePopup").addEventListener("click", togglePopUp);
 
 window.onload = preloadBook
