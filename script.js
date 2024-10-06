@@ -11,6 +11,19 @@ function Book(title, author, pages, read) {
     }
 }
 
+document.querySelector("form").addEventListener("submit", function(event){
+    event.preventDefault();
+
+    const titleValue = document.getElementById("title").value;
+    const authorValue = document.getElementById("author").value;
+    const pagesValue = document.getElementById("pages").value;
+    const readValue = document.getElementById("read").checked;
+
+    console.log(titleValue);
+})
+
+
 function addBookToLibrary() {
-    let newBook = new Book()
-}
+    let newBook = new Book(titleValue, authorValue, pagesValue, readValue)
+};
+
