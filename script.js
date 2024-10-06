@@ -19,11 +19,16 @@ document.querySelector("form").addEventListener("submit", function(event){
     const pagesValue = document.getElementById("pages").value;
     const readValue = document.getElementById("read").checked;
 
-    console.log(titleValue);
+    addBookToLibrary(titleValue, authorValue, pagesValue, readValue);
 })
 
 
+
+
 function addBookToLibrary() {
-    let newBook = new Book(titleValue, authorValue, pagesValue, readValue)
+    let newBook = new Book(title, author, pages, read)
+    myLibrary.push(newBook)
+    console.log(myLibrary)
 };
 
+console.log(myLibrary)
