@@ -20,15 +20,45 @@ document.querySelector("form").addEventListener("submit", function(event){
     const readValue = document.getElementById("read").checked;
 
     addBookToLibrary(titleValue, authorValue, pagesValue, readValue);
+    myLoop()
 })
 
 
 
 
-function addBookToLibrary() {
+function addBookToLibrary(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read)
     myLibrary.push(newBook)
     console.log(myLibrary)
 };
 
-console.log(myLibrary)
+function myLoop(){
+    let container = document.getElementById("container");
+    container.innerHTML = "";
+
+    for (let i = 0; i < myLibrary.length; i++){
+        let book = myLibrary[i];
+        
+        let card = document.createElement("div");
+        card.classList("bookCards");
+        
+        let bookTitle =  document.createElement("p")
+        bookTitle.innerHTML = book.title;
+
+        let bookAuthor =  document.createElement("p")
+        bookAuthor.innerHTML = book.author;
+
+        let bookPages =  document.createElement("p")
+        bookPages.innerHTML = book.pages;
+
+        let bookRead =  document.createElement("p")
+        bookRead.innerHTML = (book.read ? 'yes' : 'no')
+
+        card.appendChild(bookTitle);
+        card.appendChild(bookAuthor);
+        card.appendChild(bookPages);
+        card.appendChild(bookRead);
+        container.appendChild(card);
+    }
+}
+
