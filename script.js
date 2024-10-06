@@ -21,6 +21,11 @@ document.querySelector("form").addEventListener("submit", function(event){
 
     addBookToLibrary(titleValue, authorValue, pagesValue, readValue);
     myLoop()
+
+    var allInputs = document.querySelectorAll('input');
+    allInputs.forEach(singleInput => singleInput.value = '');
+    var checkbox = document.getElementById("read");
+    (checkbox.checked = false);
 })
 
 
@@ -40,8 +45,8 @@ function myLoop(){
         let book = myLibrary[i];
         
         let card = document.createElement("div");
-        card.classList("bookCards");
-        
+
+
         let bookTitle =  document.createElement("p")
         bookTitle.innerHTML = book.title;
 
