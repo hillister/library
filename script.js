@@ -15,7 +15,14 @@ function preloadBook() {
     let sampleBook = new Book("The Great Gatsby", "F. Scott Fitzgerald", 180, false);
     myLibrary.push(sampleBook);
     myLoop(); // Render the preloaded book
+    let sampleBook2 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 180, false);
+    myLibrary.push(sampleBook2);
+    myLoop(); // Render the preloaded book
+    let sampleBook3 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 180, false);
+    myLibrary.push(sampleBook3);
+    myLoop(); // Render the preloaded book
 }
+
 
 document.querySelector("form").addEventListener("submit", function(event){
     event.preventDefault();
@@ -52,19 +59,23 @@ function myLoop(){
         let book = myLibrary[i];
         
         let card = document.createElement("div");
-
+        card.className = "card";
 
         let bookTitle =  document.createElement("p")
+        bookTitle.className = "cardTitle";
         bookTitle.innerHTML = `Title: ${book.title}`;
 
         let bookAuthor =  document.createElement("p")
+        bookAuthor.className = "cardAuthor";
         bookAuthor.innerHTML = `Author: ${book.author}`;
 
         let bookPages =  document.createElement("p")
+        bookPages.className = "cardPages";
         bookPages.innerHTML = `Pages: ${book.pages}`;
 
         let bookRead =  document.createElement("p")
-        bookRead.innerHTML = (book.read ? 'Already read' : 'Not read yet')
+        bookRead.className = "cardRead";
+        bookRead.innerHTML = `Status: ${(book.read ? 'Already read' : 'Not read yet')}`
 
         card.appendChild(bookTitle);
         card.appendChild(bookAuthor);
@@ -75,18 +86,20 @@ function myLoop(){
 
         if(book.read === false) {
             let changeRead = document.createElement("button")
-            changeRead.innerHTML = "read"
+            changeRead.className = "read"
+            changeRead.innerHTML = "READ"
             card.appendChild(changeRead);
 
             changeRead.addEventListener("click", function(){
                 book.read = true
-                bookRead.innerHTML = 'yes'
+                bookRead.innerHTML = 'Already read'
                 changeRead.remove()
             });
         }
 
         let deleteBtn = document.createElement("button")
-        deleteBtn.innerHTML = "delete"
+        deleteBtn.className = "delBtn"
+        deleteBtn.innerHTML = "DELETE"
         
         deleteBtn.addEventListener("click", function(){
             removeCard(i)

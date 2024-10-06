@@ -11,6 +11,12 @@
     display: block;
 }
 
+body {
+    display: grid;
+    grid-template-rows: 1fr 7fr 1fr;
+    
+}
+
 .header {
     height: 100px;
     color: white;
@@ -22,4 +28,83 @@
 .header h2 {
     font-size: 30px;
     align-self: center;
+}
+
+#btnPopUp {
+    background-color: rgb(30, 121, 94);
+    border: none;
+    font-size: 30px;
+    width: 70px;
+    height: 70px;
+    border-radius: 40px;
+    color: white;
+    justify-self: center;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+}
+
+.card {
+    border-left: solid;
+    border-radius: 10px;
+    border-width: 10px;
+    background-color: rgb(241, 241, 241);
+    border-color: rgb(30, 121, 94);
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    justify-items: center;
+    align-items: center;
+    width: 300px;
+    height: 250px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.delBtn {
+    background-color: rgb(30, 121, 94);
+    color: white;
+    justify-self: center;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80px;
+    font-size: 15px;
+    grid-row-start: 5;
+    grid-column-start: 2;
+}
+
+.read {
+    background-color: rgb(30, 121, 94);
+    color: white;
+    justify-self: center;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80px;
+    font-size: 15px;
+    grid-row-start: 5;
+    grid-column-start: 1;
+}
+
+.cardTitle {
+    grid-column: span 2;
+}
+
+.cardAuthor {
+    grid-column: span 2;
+}
+
+.cardPages {
+    grid-column: span 2;
+}
+
+.cardRead {
+    grid-column: span 2;
 }
