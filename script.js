@@ -11,6 +11,12 @@ function Book(title, author, pages, read) {
     }
 }
 
+function preloadBook() {
+    let sampleBook = new Book("The Great Gatsby", "F. Scott Fitzgerald", 180, false);
+    myLibrary.push(sampleBook);
+    myLoop(); // Render the preloaded book
+}
+
 document.querySelector("form").addEventListener("submit", function(event){
     event.preventDefault();
 
@@ -49,24 +55,35 @@ function myLoop(){
 
 
         let bookTitle =  document.createElement("p")
-        bookTitle.innerHTML = book.title;
+        bookTitle.innerHTML = `Title: ${book.title}`;
 
         let bookAuthor =  document.createElement("p")
-        bookAuthor.innerHTML = book.author;
+        bookAuthor.innerHTML = `Author: ${book.author}`;
 
         let bookPages =  document.createElement("p")
-        bookPages.innerHTML = book.pages;
+        bookPages.innerHTML = `Pages: ${book.pages}`;
 
         let bookRead =  document.createElement("p")
-        bookRead.innerHTML = (book.read ? 'yes' : 'no')
+        bookRead.innerHTML = (book.read ? 'Already read' : 'Not read yet')
 
-        let changeRead = document.createElement("button")
-        changeRead.innerHTML = "read"
-         
-        changeRead.addEventListener("click", function(){
-            book.read = true
-            bookRead.innerHTML = 'yes'
-        });
+        card.appendChild(bookTitle);
+        card.appendChild(bookAuthor);
+        card.appendChild(bookPages);
+        card.appendChild(bookRead);
+
+        container.appendChild(card);        
+
+        if(book.read === false) {
+            let changeRead = document.createElement("button")
+            changeRead.innerHTML = "read"
+            card.appendChild(changeRead);
+
+            changeRead.addEventListener("click", function(){
+                book.read = true
+                bookRead.innerHTML = 'yes'
+                changeRead.remove()
+            });
+        }
 
         let deleteBtn = document.createElement("button")
         deleteBtn.innerHTML = "delete"
@@ -74,17 +91,10 @@ function myLoop(){
         deleteBtn.addEventListener("click", function(){
             removeCard(i)
         });
-
-        card.appendChild(bookTitle);
-        card.appendChild(bookAuthor);
-        card.appendChild(bookPages);
-        card.appendChild(bookRead);
-        card.appendChild(changeRead);
         card.appendChild(deleteBtn);
-        container.appendChild(card);        
+
     }
 }
-
 
 
 function removeCard(index){
@@ -98,3 +108,5 @@ function togglePopUp() {
 }
 
 document.getElementById("btnPopUp").addEventListener("click", togglePopUp);
+
+window.onload = preloadBook
