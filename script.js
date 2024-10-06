@@ -60,14 +60,28 @@ function myLoop(){
         let bookRead =  document.createElement("p")
         bookRead.innerHTML = (book.read ? 'yes' : 'no')
 
+        let deleteBtn = document.createElement("button")
+        deleteBtn.innerHTML = "delete"
+        
+        deleteBtn.addEventListener("click", function(){
+            removeCard(i)
+        });
+
         card.appendChild(bookTitle);
         card.appendChild(bookAuthor);
         card.appendChild(bookPages);
         card.appendChild(bookRead);
+        card.appendChild(deleteBtn);
         container.appendChild(card);
+
+        
     }
 }
 
+function removeCard(index){
+    myLibrary.splice(index, 1);
+    myLoop()
+}
 
 function togglePopUp() {
     const popUp = document.getElementById("popUp");
