@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form id="myForm">
-        <legend>New Book</legend>
-        <label>Title</label>
-        <input type="text" name="title" id="title" required>
-        <label>Author</label>
-        <input type="text" name="author" id="author" required>
-        <label>Pages</label>
-        <input type="number" name="pages" id="pages" required>
-        <label>Read</label>
-        <input type="checkbox" name="read" id="read">
-        <button type="submit">Submit</button>    
-    </form>
+    <button type="button" id="btnPopUp">New</button>
+    <div id="popUp">
+        <form id="myForm">
+            <legend>New Book</legend>
+            <label>Title</label>
+            <input type="text" name="title" id="title" required>
+            <label>Author</label>
+            <input type="text" name="author" id="author" required>
+            <label>Pages</label>
+            <input type="number" name="pages" id="pages" required>
+            <label>Read</label>
+            <input type="checkbox" name="read" id="read">
+            <button type="submit">Submit</button>    
+        </form> 
+    </div>
+
     <div id="container"></div>
     <script src="script.js"></script>
 </body>

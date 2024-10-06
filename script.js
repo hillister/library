@@ -20,7 +20,8 @@ document.querySelector("form").addEventListener("submit", function(event){
     const readValue = document.getElementById("read").checked;
 
     addBookToLibrary(titleValue, authorValue, pagesValue, readValue);
-    myLoop()
+    myLoop();
+    togglePopUp();
 
     var allInputs = document.querySelectorAll('input');
     allInputs.forEach(singleInput => singleInput.value = '');
@@ -67,3 +68,10 @@ function myLoop(){
     }
 }
 
+
+function togglePopUp() {
+    const popUp = document.getElementById("popUp");
+    popUp.classList.toggle('show');
+}
+
+document.getElementById("btnPopUp").addEventListener("click", togglePopUp);

@@ -1,0 +1,7 @@
+#popUp {
+    display: none;
+}
+
+#popUp.show {
+    display: block;
+}
